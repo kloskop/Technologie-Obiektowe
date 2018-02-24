@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1519474784488" TestSessionContainerId="fd2484d0-3898-401e-aed5-6ebbacdb6c56" version="1.0">
+<SrcFileList>
+<SrcFile Content="package samochody;&#13;&#10;&#13;&#10;import java.io.Serializable;&#13;&#10;&#13;&#10;public class Samochod implements Serializable{&#13;&#10;&#9;private String rejestracja;&#13;&#10;&#9;private float wartosc;&#13;&#10;&#9;private float amortyzacja;&#13;&#10;&#9;&#13;&#10;&#9;public Samochod(String rejestracja, float wartosc, float amortyzacja)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;this.rejestracja=rejestracja;&#13;&#10;&#9;&#9;this.wartosc=wartosc;&#13;&#10;&#9;&#9;this.amortyzacja=amortyzacja;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;&#9;public String getRejestracja()&#13;&#10;&#9;{&#13;&#10;&#9;&#9;return rejestracja;&#13;&#10;&#9;}&#13;&#10;&#9;public void amortyzuj()&#13;&#10;&#9;{&#13;&#10;&#9;&#9;this.wartosc-=this.wartosc*this.amortyzacja/100.0;&#13;&#10;&#9;}&#13;&#10;&#9;public float getWartosc()&#13;&#10;&#9;{&#13;&#10;&#9;&#9;return this.wartosc;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;}&#13;&#10;" Filename="Samochod.java" Intrnl_Id="1"/>
+<SrcFile Content="package samochody;&#13;&#10;&#13;&#10;import java.io.Serializable;&#13;&#10;import java.util.ArrayList;&#13;&#10;import java.util.Iterator;&#13;&#10;&#13;&#10;public class Kierowca implements Serializable {&#13;&#10;&#13;&#10;&#9;//Help -&gt; install new software-&gt;add codecover i link do httt z codecoverem (&#13;&#10;&#9;&#13;&#10;&#9;private int pesel;&#13;&#10;&#9;private String imie;&#13;&#10;&#9;private String nazwisko;&#13;&#10;&#9;private ArrayList&lt;Samochod&gt; samochody;&#13;&#10;&#9;&#13;&#10;&#9;public Kierowca(int pesel, String imie, String nazwisko)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;this.pesel=pesel;&#13;&#10;&#9;&#9;this.imie=imie;&#13;&#10;&#9;&#9;this.nazwisko=nazwisko;&#13;&#10;&#9;&#9;samochody=new ArrayList&lt;Samochod&gt;();&#13;&#10;&#9;}&#13;&#10;&#9;public int getPesel(){return pesel;}&#13;&#10;&#9;public Samochod znajdzSamochod(String rejestracja)&#13;&#10;&#9;{&#9;&#9; &#9;&#9;   &#13;&#10;&#9;&#9;  for (Iterator&lt;Samochod&gt; it = samochody.iterator(); it.hasNext (); ) {&#13;&#10;&#9;&#9;    Samochod k = it.next();&#13;&#10;&#9;&#9;    if(k.getRejestracja()==rejestracja)&#13;&#10;&#9;&#9;    &#9;return k;&#13;&#10;&#9;&#9;  }&#13;&#10;&#9;&#9;return null;&#13;&#10;&#9;}&#13;&#10;&#9;public String getImieINazwisko()&#13;&#10;&#9;{&#13;&#10;&#9;&#9;return imie+&quot; &quot;+ nazwisko;&#13;&#10;&#9;}&#13;&#10;&#9;public void amortyzujSamochody()&#13;&#10;&#9;{&#13;&#10;&#9;&#9; for (Iterator&lt;Samochod&gt; it = samochody.iterator(); it.hasNext (); ) {&#13;&#10;&#9;&#9;&#9;    Samochod k = it.next();&#13;&#10;&#9;&#9;&#9;    k.amortyzuj();&#13;&#10;&#9;&#9; }&#13;&#10;&#9;}&#9;&#13;&#10;&#9;public void dodajSamochod(Samochod samochod)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;samochody.add(samochod);&#13;&#10;&#9;}&#13;&#10;}&#13;&#10;" Filename="Kierowca.java" Intrnl_Id="2"/>
+</SrcFileList>
+<CritList>
+<CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+</CritList>
+<BoolOpList/>
+<HierarchyLvlTypeList>
+<HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="3"/>
+<HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="4"/>
+<HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="5"/>
+<HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="6"/>
+</HierarchyLvlTypeList>
+<MASTRoot>
+<HierarchyLvl HierarchyLvlId="388" HierarchyLvlTypeId="6" Intrnl_Id="7" Name="default package">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="387" HierarchyLvlTypeId="3" Intrnl_Id="8" Name="samochody">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="379" HierarchyLvlTypeId="5" Intrnl_Id="9" Name="Samochod">
+<Header>
+<Loc EndOffset="99" SrcFileId="1" StartOffset="54"/>
+</Header>
+<LocList>
+<Loc EndOffset="579" SrcFileId="1" StartOffset="54"/>
+</LocList>
+<HierarchyLvl HierarchyLvlId="375" HierarchyLvlTypeId="4" Intrnl_Id="10" Name="Samochod">
+<Header>
+<Loc EndOffset="259" SrcFileId="1" StartOffset="190"/>
+</Header>
+<LocList>
+<Loc EndOffset="358" SrcFileId="1" StartOffset="190"/>
+</LocList>
+<StmntSeq Intrnl_Id="11">
+<LocList>
+<Loc EndOffset="296" SrcFileId="1" StartOffset="267"/>
+<Loc EndOffset="321" SrcFileId="1" StartOffset="300"/>
+<Loc EndOffset="354" SrcFileId="1" StartOffset="325"/>
+</LocList>
+<BasicStmnt CovItemId="S1" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="12">
+<LocList>
+<Loc EndOffset="296" SrcFileId="1" StartOffset="267"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S2" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="13">
+<LocList>
+<Loc EndOffset="321" SrcFileId="1" StartOffset="300"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S3" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="14">
+<LocList>
+<Loc EndOffset="354" SrcFileId="1" StartOffset="325"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="376" HierarchyLvlTypeId="4" Intrnl_Id="15" Name="getRejestracja">
+<Header>
+<Loc EndOffset="394" SrcFileId="1" StartOffset="364"/>
+</Header>
+<LocList>
+<Loc EndOffset="425" SrcFileId="1" StartOffset="364"/>
+</LocList>
+<StmntSeq Intrnl_Id="16">
+<LocList>
+<Loc EndOffset="421" SrcFileId="1" StartOffset="402"/>
+</LocList>
+<BasicStmnt CovItemId="S4" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="17">
+<LocList>
+<Loc EndOffset="421" SrcFileId="1" StartOffset="402"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="377" HierarchyLvlTypeId="4" Intrnl_Id="18" Name="amortyzuj">
+<Header>
+<Loc EndOffset="451" SrcFileId="1" StartOffset="428"/>
+</Header>
+<LocList>
+<Loc EndOffset="513" SrcFileId="1" StartOffset="428"/>
+</LocList>
+<StmntSeq Intrnl_Id="19">
+<LocList>
+<Loc EndOffset="509" SrcFileId="1" StartOffset="459"/>
+</LocList>
+<BasicStmnt CovItemId="S5" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="20">
+<LocList>
+<Loc EndOffset="509" SrcFileId="1" StartOffset="459"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="378" HierarchyLvlTypeId="4" Intrnl_Id="21" Name="getWartosc">
+<Header>
+<Loc EndOffset="541" SrcFileId="1" StartOffset="516"/>
+</Header>
+<LocList>
+<Loc EndOffset="573" SrcFileId="1" StartOffset="516"/>
+</LocList>
+<StmntSeq Intrnl_Id="22">
+<LocList>
+<Loc EndOffset="569" SrcFileId="1" StartOffset="549"/>
+</LocList>
+<BasicStmnt CovItemId="S6" CovItemPrefix="samochody.Samochod.java" Intrnl_Id="23">
+<LocList>
+<Loc EndOffset="569" SrcFileId="1" StartOffset="549"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="386" HierarchyLvlTypeId="5" Intrnl_Id="24" Name="Kierowca">
+<Header>
+<Loc EndOffset="156" SrcFileId="2" StartOffset="111"/>
+</Header>
+<LocList>
+<Loc EndOffset="1167" SrcFileId="2" StartOffset="111"/>
+</LocList>
+<HierarchyLvl HierarchyLvlId="380" HierarchyLvlTypeId="4" Intrnl_Id="25" Name="Kierowca">
+<Header>
+<Loc EndOffset="416" SrcFileId="2" StartOffset="360"/>
+</Header>
+<LocList>
+<Loc EndOffset="531" SrcFileId="2" StartOffset="360"/>
+</LocList>
+<StmntSeq Intrnl_Id="26">
+<LocList>
+<Loc EndOffset="441" SrcFileId="2" StartOffset="424"/>
+<Loc EndOffset="460" SrcFileId="2" StartOffset="445"/>
+<Loc EndOffset="487" SrcFileId="2" StartOffset="464"/>
+<Loc EndOffset="527" SrcFileId="2" StartOffset="491"/>
+</LocList>
+<BasicStmnt CovItemId="S1" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="27">
+<LocList>
+<Loc EndOffset="441" SrcFileId="2" StartOffset="424"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S2" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="28">
+<LocList>
+<Loc EndOffset="460" SrcFileId="2" StartOffset="445"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S3" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="29">
+<LocList>
+<Loc EndOffset="487" SrcFileId="2" StartOffset="464"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S4" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="30">
+<LocList>
+<Loc EndOffset="527" SrcFileId="2" StartOffset="491"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="381" HierarchyLvlTypeId="4" Intrnl_Id="31" Name="getPesel">
+<Header>
+<Loc EndOffset="555" SrcFileId="2" StartOffset="534"/>
+</Header>
+<LocList>
+<Loc EndOffset="570" SrcFileId="2" StartOffset="534"/>
+</LocList>
+<StmntSeq Intrnl_Id="32">
+<LocList>
+<Loc EndOffset="569" SrcFileId="2" StartOffset="556"/>
+</LocList>
+<BasicStmnt CovItemId="S5" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="33">
+<LocList>
+<Loc EndOffset="569" SrcFileId="2" StartOffset="556"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="382" HierarchyLvlTypeId="4" Intrnl_Id="34" Name="znajdzSamochod">
+<Header>
+<Loc EndOffset="623" SrcFileId="2" StartOffset="573"/>
+</Header>
+<LocList>
+<Loc EndOffset="829" SrcFileId="2" StartOffset="573"/>
+</LocList>
+<StmntSeq Intrnl_Id="35">
+<LocList>
+<Loc EndOffset="809" SrcFileId="2" StartOffset="641"/>
+<Loc EndOffset="825" SrcFileId="2" StartOffset="813"/>
+</LocList>
+<LoopStmnt CovItemId="S6" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="36" MltplExecId="L1-2" MltplExecPrefix="samochody.Kierowca.java" NvrExecId="L1-0" NvrExecPrefix="samochody.Kierowca.java" OnceExecutedId="L1-1" OnceExecutedPrefix="samochody.Kierowca.java" OptBodyExec="true">
+<StmntSeq Intrnl_Id="37">
+<LocList>
+<Loc EndOffset="741" SrcFileId="2" StartOffset="718"/>
+<Loc EndOffset="802" SrcFileId="2" StartOffset="749"/>
+</LocList>
+<BasicStmnt CovItemId="S7" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="38">
+<LocList>
+<Loc EndOffset="741" SrcFileId="2" StartOffset="718"/>
+</LocList>
+</BasicStmnt>
+<CondStmnt CovItemId="S8" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="39">
+<Branch CovItemId="B1" CovItemPrefix="samochody.Kierowca.java" Implct="false" Intrnl_Id="40">
+<Cond/>
+<LocList>
+<Loc EndOffset="802" SrcFileId="2" StartOffset="793"/>
+</LocList>
+<StmntSeq Intrnl_Id="41">
+<LocList>
+<Loc EndOffset="802" SrcFileId="2" StartOffset="793"/>
+</LocList>
+<BasicStmnt CovItemId="S9" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="42">
+<LocList>
+<Loc EndOffset="802" SrcFileId="2" StartOffset="793"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B2" CovItemPrefix="samochody.Kierowca.java" Implct="true" Intrnl_Id="43">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="44">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="751" SrcFileId="2" StartOffset="749"/>
+<LocList>
+<Loc EndOffset="802" SrcFileId="2" StartOffset="749"/>
+</LocList>
+</CondStmnt>
+</StmntSeq>
+<Keyword EndOffset="644" SrcFileId="2" StartOffset="641"/>
+<LocList>
+<Loc EndOffset="809" SrcFileId="2" StartOffset="641"/>
+</LocList>
+</LoopStmnt>
+<BasicStmnt CovItemId="S10" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="45">
+<LocList>
+<Loc EndOffset="825" SrcFileId="2" StartOffset="813"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="383" HierarchyLvlTypeId="4" Intrnl_Id="46" Name="getImieINazwisko">
+<Header>
+<Loc EndOffset="864" SrcFileId="2" StartOffset="832"/>
+</Header>
+<LocList>
+<Loc EndOffset="902" SrcFileId="2" StartOffset="832"/>
+</LocList>
+<StmntSeq Intrnl_Id="47">
+<LocList>
+<Loc EndOffset="898" SrcFileId="2" StartOffset="872"/>
+</LocList>
+<BasicStmnt CovItemId="S11" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="48">
+<LocList>
+<Loc EndOffset="898" SrcFileId="2" StartOffset="872"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="384" HierarchyLvlTypeId="4" Intrnl_Id="49" Name="amortyzujSamochody">
+<Header>
+<Loc EndOffset="937" SrcFileId="2" StartOffset="905"/>
+</Header>
+<LocList>
+<Loc EndOffset="1080" SrcFileId="2" StartOffset="905"/>
+</LocList>
+<StmntSeq Intrnl_Id="50">
+<LocList>
+<Loc EndOffset="1076" SrcFileId="2" StartOffset="946"/>
+</LocList>
+<LoopStmnt CovItemId="S12" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="51" MltplExecId="L2-2" MltplExecPrefix="samochody.Kierowca.java" NvrExecId="L2-0" NvrExecPrefix="samochody.Kierowca.java" OnceExecutedId="L2-1" OnceExecutedPrefix="samochody.Kierowca.java" OptBodyExec="true">
+<StmntSeq Intrnl_Id="52">
+<LocList>
+<Loc EndOffset="1047" SrcFileId="2" StartOffset="1024"/>
+<Loc EndOffset="1070" SrcFileId="2" StartOffset="1056"/>
+</LocList>
+<BasicStmnt CovItemId="S13" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="53">
+<LocList>
+<Loc EndOffset="1047" SrcFileId="2" StartOffset="1024"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S14" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="54">
+<LocList>
+<Loc EndOffset="1070" SrcFileId="2" StartOffset="1056"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+<Keyword EndOffset="949" SrcFileId="2" StartOffset="946"/>
+<LocList>
+<Loc EndOffset="1076" SrcFileId="2" StartOffset="946"/>
+</LocList>
+</LoopStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="385" HierarchyLvlTypeId="4" Intrnl_Id="55" Name="dodajSamochod">
+<Header>
+<Loc EndOffset="1128" SrcFileId="2" StartOffset="1084"/>
+</Header>
+<LocList>
+<Loc EndOffset="1164" SrcFileId="2" StartOffset="1084"/>
+</LocList>
+<StmntSeq Intrnl_Id="56">
+<LocList>
+<Loc EndOffset="1160" SrcFileId="2" StartOffset="1136"/>
+</LocList>
+<BasicStmnt CovItemId="S15" CovItemPrefix="samochody.Kierowca.java" Intrnl_Id="57">
+<LocList>
+<Loc EndOffset="1160" SrcFileId="2" StartOffset="1136"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</MASTRoot>
+</TestSessionContainer>

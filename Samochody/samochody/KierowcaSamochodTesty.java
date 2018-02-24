@@ -12,29 +12,45 @@ public class KierowcaSamochodTesty {
 
 	Kierowca kierowca;
 	Samochod mockSamochod;
-	
+	Samochod mockSamochod2;
 	@Before
 	public void zainicjujTesty() throws Exception {
-		kierowca = new Kierowca(8374,"Wladek", "Zprzemysla");
+		kierowca = new Kierowca(8374, "Wladek", "Zprzemysla");
 		mockSamochod = createMock(Samochod.class);
+		mockSamochod2 = createMock(Samochod.class);
 	}
-	
+
 	@Test
-	public void testAmortyzacjaSamochodu()
-	{
-		//zakladamy, ze dodawany samochod ma wartosc 10000 i amortyzacje 10 %
-		
+	public void testAmortyzacjaSamochodu1() {
+		// zakladamy, ze dodawany samochod ma wartosc 10000 i amortyzacje 10 %
+
 		mockSamochod.amortyzuj();
-		expect(mockSamochod.getWartosc()).andReturn(9000.0f);
 		replay(mockSamochod);
-				
 		kierowca.dodajSamochod(mockSamochod);
 		kierowca.amortyzujSamochody();
-		
-		assertEquals(mockSamochod.getWartosc(),9000.0f);
 		verify(mockSamochod);
+	}
+
+	@Test
+	public void testAmortyzacjaSamochodu0() {
+		kierowca.amortyzujSamochody();
+	}
+	
+	
+	@Test
+	public void testAmortyzacjaSamochodu2() {
+		// zakladamy, ze dodawany samochod ma wartosc 10000 i amortyzacje 10 %
+
+		mockSamochod.amortyzuj();
+		mockSamochod2.amortyzuj();
+		replay(mockSamochod);
+		replay(mockSamochod2);
+		kierowca.dodajSamochod(mockSamochod);
+		kierowca.dodajSamochod(mockSamochod2);
+		kierowca.amortyzujSamochody();
+		verify(mockSamochod);
+		verify(mockSamochod2);
 	}
 	
 
 }
-	

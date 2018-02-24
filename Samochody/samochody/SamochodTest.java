@@ -6,24 +6,29 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class SamochodTest {
+	
+	Samochod samochod;
 
 	@Before
 	public void setUp() throws Exception {
+		samochod = new Samochod("KGR", 10000, 10);
 	}
 
 	@Test
 	public void testGetRejestracja() {
-		fail("Not yet implemented");
+		assertEquals(samochod.getRejestracja(),"KGR");
 	}
 
+	
 	@Test
 	public void testAmortyzuj() {
-		fail("Not yet implemented");
+		samochod.amortyzuj();
+		assertEquals(samochod.getWartosc(),9000,0.01);
 	}
 
 	@Test
 	public void testGetWartosc() {
-		fail("Not yet implemented");
+		assertEquals(samochod.getWartosc(),10000,0.01);
 	}
 
 }
